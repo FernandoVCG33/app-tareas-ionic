@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {
   IonHeader,
   IonToolbar,
@@ -12,6 +12,7 @@ import {
 import {FormsModule} from "@angular/forms";
 import {addOutline} from "ionicons/icons";
 import {addIcons} from "ionicons";
+import {Alert} from "../../services/alert";
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ import {addIcons} from "ionicons";
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, FormsModule, IonButton, IonIcon, IonLabel, IonList],
 })
 export class HomePage {
+  private alertService:Alert= inject(Alert);
   public tasksList: string[] = [];
   public task: string = '';
   constructor() {
@@ -33,9 +35,12 @@ export class HomePage {
       this.tasksList.push(this.task);
       console.log('Task added:', this.task , this.tasksList.length);
       this.task = '';
+      this.alertService.alertMessage('Exito!' ,'Tarea agregada correctamente');
     }
     else{
       console.log("La tarea existe"  );
+      this.alertService.alertMessage('Error' ,'La tarea ya existe en la lista');
+
     }
   }
   showConsole(){
