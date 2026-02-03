@@ -28,13 +28,23 @@ export class HomePage {
     })
   }
   addTask(){
-    this.tasksList.push();
-    console.log('Task added:', this.task);
-    this.task = '';
+    console.log(this.task);
+    if(!this.existTask(this.task) ){
+      this.tasksList.push(this.task);
+      console.log('Task added:', this.task , this.tasksList.length);
+      this.task = '';
+    }
+    else{
+      console.log("La tarea existe"  );
+    }
   }
   showConsole(){
     for(let i = 0; i < this.tasksList.length; i++){
       console.log(this.tasksList[i]);
     }
+  }
+  private existTask(task: string) {
+    return this.tasksList.find( (item:string)=> task.toUpperCase().trim() ===
+      item.toUpperCase().trim() );
   }
 }
