@@ -7,7 +7,7 @@ import {
   IonItem,
   IonInput,
   IonButton,
-  IonIcon
+  IonIcon, IonLabel, IonList
 } from '@ionic/angular/standalone';
 import {FormsModule} from "@angular/forms";
 import {addOutline} from "ionicons/icons";
@@ -17,7 +17,7 @@ import {addIcons} from "ionicons";
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, FormsModule, IonButton,IonIcon],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, FormsModule, IonButton, IonIcon, IonLabel, IonList],
 })
 export class HomePage {
   public tasksList: string[] = [];

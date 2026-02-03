@@ -12,6 +12,23 @@
     <ion-button (click)="addTask()" [disabled]="!task" >
       <ion-icon name="add-outline"/>
     </ion-button>
-
   </ion-item>
+  @if (tasksList.length ==0){
+    <ion-item class="ion-text-center" lines="none">
+      <ion-label>
+        No hay tareas pendientes
+      </ion-label>
+    </ion-item>
+  } @else{
+    <ion-list>
+      @for (item of tasksList;track $index){
+        <ion-item>
+          <ion-label>
+            {{item}}
+          </ion-label>
+        </ion-item>
+      }
+    </ion-list>
+  }
+
 </ion-content>
