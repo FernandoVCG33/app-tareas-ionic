@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-item>
     <ion-input type="text" placeholder="escribe tu tarea..." name="task" [(ngModel)]="task"/>
-    <ion-button (click)="addTask()" >
+    <ion-button (click)="addTask()" [disabled]="!task" >
       <ion-icon name="add-outline"/>
     </ion-button>
 

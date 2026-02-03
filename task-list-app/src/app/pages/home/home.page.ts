@@ -20,6 +20,7 @@ import {addIcons} from "ionicons";
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, FormsModule, IonButton,IonIcon],
 })
 export class HomePage {
+  public tasksList: string[] = [];
   public task: string = '';
   constructor() {
     addIcons({
@@ -27,6 +28,13 @@ export class HomePage {
     })
   }
   addTask(){
-    console.log(this.task);
+    this.tasksList.push();
+    console.log('Task added:', this.task);
+    this.task = '';
+  }
+  showConsole(){
+    for(let i = 0; i < this.tasksList.length; i++){
+      console.log(this.tasksList[i]);
+    }
   }
 }
