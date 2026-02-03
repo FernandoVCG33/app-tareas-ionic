@@ -8,5 +8,5 @@ import {IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput} from '@i
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput],
 })
 export class HomePage {
-  constructor() {}
+  public task: string = '';
 }
