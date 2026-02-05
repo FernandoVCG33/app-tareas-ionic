@@ -20,7 +20,7 @@ export class Alert {
 
     await alert.present();
   }
-   async alertConfirm(
+  async alertConfirm(
     header: string,
     message: string,
     functionOk: Function,

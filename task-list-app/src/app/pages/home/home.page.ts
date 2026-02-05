@@ -56,12 +56,20 @@ export class HomePage {
   delete(task:string){
       this.alertService.alertConfirm(
         'Confirmar eliminación',
-        `¿Estás seguro de que deseas eliminar la tarea: "${task}"?`,
+        '¿Estás seguro de que deseas eliminar la tarea',
         ()=> this.removeTask(task)
-      );
+      )
   }
   private removeTask(task:string){
-    console.log('Eliminando tarea:', task);
-
+    console.log('Eliminando tarea:'+ task);
+    const index = this.tasksList.findIndex(
+      (item:string)=> task.toUpperCase().trim() === item.toUpperCase().trim());
+    if (index != -1) {
+      this.tasksList.splice(index, 1);
+      console.log("TAREA ELIMINADA"  );
+    }
+    else{
+      console.log("LA TAREA NO EXISTE PARA ELIMINAR"  );
+    }
   }
 }
