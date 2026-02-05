@@ -54,6 +54,14 @@ export class HomePage {
       item.toUpperCase().trim() );
   }
   delete(task:string){
+      this.alertService.alertConfirm(
+        'Confirmar eliminación',
+        `¿Estás seguro de que deseas eliminar la tarea: "${task}"?`,
+        ()=> this.removeTask(task)
+      );
+  }
+  private removeTask(task:string){
+    console.log('Eliminando tarea:', task);
 
   }
 }

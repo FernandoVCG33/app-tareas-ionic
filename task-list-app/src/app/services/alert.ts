@@ -20,4 +20,32 @@ export class Alert {
 
     await alert.present();
   }
+   async alertConfirm(
+    header: string,
+    message: string,
+    functionOk: Function,
+    cancelText:string='Cancelar',
+    confirmText:string='Aceptar'
+  ){
+    const alert = await this.alertController.create({
+      header ,
+      message,
+      buttons: [
+        {
+          text: cancelText,
+          role: 'cancel',
+        },
+        {
+          text: confirmText,
+          role: 'confirm',
+          handler: () => {
+            functionOk();
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+
+  }
 }
