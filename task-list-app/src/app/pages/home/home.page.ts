@@ -7,10 +7,10 @@ import {
   IonItem,
   IonInput,
   IonButton,
-  IonIcon, IonLabel, IonList
+  IonIcon, IonLabel, IonList, IonItemSliding, IonItemOptions, IonItemOption
 } from '@ionic/angular/standalone';
 import {FormsModule} from "@angular/forms";
-import {addOutline} from "ionicons/icons";
+import {addOutline, trashOutline} from "ionicons/icons";
 import {addIcons} from "ionicons";
 import {Alert} from "../../services/alert";
 
@@ -18,7 +18,7 @@ import {Alert} from "../../services/alert";
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, FormsModule, IonButton, IonIcon, IonLabel, IonList],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, FormsModule, IonButton, IonIcon, IonLabel, IonList, IonItemSliding, IonItemOptions, IonItemOption],
 })
 export class HomePage {
   private alertService:Alert= inject(Alert);
@@ -26,7 +26,8 @@ export class HomePage {
   public task: string = '';
   constructor() {
     addIcons({
-      addOutline
+      addOutline,
+      trashOutline
     })
   }
   addTask(){
@@ -51,5 +52,8 @@ export class HomePage {
   private existTask(task: string) {
     return this.tasksList.find( (item:string)=> task.toUpperCase().trim() ===
       item.toUpperCase().trim() );
+  }
+  delete(task:string){
+
   }
 }
