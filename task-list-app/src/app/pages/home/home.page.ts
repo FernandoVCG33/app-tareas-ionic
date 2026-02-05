@@ -7,7 +7,7 @@ import {
   IonItem,
   IonInput,
   IonButton,
-  IonIcon, IonLabel, IonList, IonItemSliding, IonItemOptions, IonItemOption
+  IonIcon, IonLabel, IonList, IonItemSliding, IonItemOptions, IonItemOption, IonReorderGroup
 } from '@ionic/angular/standalone';
 import {FormsModule} from "@angular/forms";
 import {addOutline, trashOutline} from "ionicons/icons";
@@ -18,7 +18,7 @@ import {Alert} from "../../services/alert";
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, FormsModule, IonButton, IonIcon, IonLabel, IonList, IonItemSliding, IonItemOptions, IonItemOption],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, FormsModule, IonButton, IonIcon, IonLabel, IonList, IonItemSliding, IonItemOptions, IonItemOption, IonReorderGroup],
 })
 export class HomePage {
   private alertService:Alert= inject(Alert);
@@ -71,5 +71,8 @@ export class HomePage {
     else{
       console.log("LA TAREA NO EXISTE PARA ELIMINAR"  );
     }
+  }
+  orderTask(event:any){
+
   }
 }
