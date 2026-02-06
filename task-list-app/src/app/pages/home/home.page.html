@@ -24,7 +24,7 @@
 
   } @else{
     <ion-list>
-      <ion-reorder-group [disabled]="false" (ionItemReorder)="orderTask($any($event))" ) >
+      <ion-reorder-group [disabled]="false" (ionItemReorder)="orderTask($any($event))"  >
         @for (item of tasksList;track $index){
           <ion-item-sliding>
             <ion-item>
