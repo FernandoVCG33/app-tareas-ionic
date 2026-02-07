@@ -7,7 +7,7 @@ import {
   IonItem,
   IonInput,
   IonButton,
-  IonIcon, IonLabel, IonList, IonItemSliding, IonItemOptions, IonItemOption, IonReorderGroup
+  IonIcon, IonLabel, IonList, IonItemSliding, IonItemOptions, IonItemOption, IonReorderGroup, IonReorder
 } from '@ionic/angular/standalone';
 import {FormsModule} from "@angular/forms";
 import {addOutline, trashOutline} from "ionicons/icons";
@@ -18,7 +18,7 @@ import {Alert} from "../../services/alert";
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, FormsModule, IonButton, IonIcon, IonLabel, IonList, IonItemSliding, IonItemOptions, IonItemOption, IonReorderGroup],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, FormsModule, IonButton, IonIcon, IonLabel, IonList, IonItemSliding, IonItemOptions, IonItemOption, IonReorderGroup, IonReorder],
 })
 export class HomePage {
   private alertService:Alert= inject(Alert);
