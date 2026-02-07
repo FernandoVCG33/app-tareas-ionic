@@ -13,6 +13,7 @@ import {FormsModule} from "@angular/forms";
 import {addOutline, trashOutline} from "ionicons/icons";
 import {addIcons} from "ionicons";
 import {Alert} from "../../services/alert";
+import {ReorderEndCustomEvent} from "@ionic/angular";
 
 @Component({
   selector: 'app-home',
@@ -72,7 +73,7 @@ export class HomePage {
       console.log("LA TAREA NO EXISTE PARA ELIMINAR"  );
     }
   }
-  orderTask(event:any){
-
+  orderTask(event: ReorderEndCustomEvent){
+    event.detail.complete();
   }
 }
