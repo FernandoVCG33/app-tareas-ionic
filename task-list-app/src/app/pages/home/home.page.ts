@@ -12,6 +12,7 @@ import {
 import {FormsModule} from "@angular/forms";
 import {addOutline, trashOutline} from "ionicons/icons";
 import {addIcons} from "ionicons";
+import { Preferences } from "@capacitor/preferences";
 import {Alert} from "../../services/alert";
 import {ReorderEndCustomEvent} from "@ionic/angular";
 
@@ -25,11 +26,15 @@ export class HomePage {
   private alertService:Alert= inject(Alert);
   public tasksList: string[] = [];
   public task: string = '';
+  public readonly key_task='ddr_key_task';
   constructor() {
     addIcons({
       addOutline,
       trashOutline
     })
+  }
+   async ionViewDidEnter() {
+    const taskPreferences= await Preferences.get({key:this.key_task});
   }
   addTask(){
     console.log(this.task);
