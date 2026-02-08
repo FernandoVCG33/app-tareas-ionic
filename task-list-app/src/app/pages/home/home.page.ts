@@ -74,6 +74,7 @@ export class HomePage {
     }
   }
   orderTask(event: ReorderEndCustomEvent){
+    this.tasksList=event.detail.complete(this.tasksList);
     event.detail.complete();
   }
 }
