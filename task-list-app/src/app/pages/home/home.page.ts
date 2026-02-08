@@ -35,6 +35,9 @@ export class HomePage {
   }
    async ionViewDidEnter() {
     const taskPreferences= await Preferences.get({key:this.key_task});
+    if(taskPreferences.value){
+      const tasks= JSON.parse(taskPreferences.value);
+    }
   }
   addTask(){
     console.log(this.task);
@@ -81,5 +84,9 @@ export class HomePage {
   orderTask(event: ReorderEndCustomEvent){
     this.tasksList=event.detail.complete(this.tasksList);
     event.detail.complete();
+    this.saveTask();
+  }
+  saveTask(){
+    Preferences.set({key:this.key_task, value: JSON.stringify(this.tasksList)});
   }
 }
